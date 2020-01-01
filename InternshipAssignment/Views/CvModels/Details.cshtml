@@ -1,0 +1,316 @@
+﻿@model InternshipAssignment.Models.CvModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    section {
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+    #top-left-col-id h2, #top-left-col-id h4 {
+        color: grey;
+    }
+    #profile-col-id img{
+
+        float: right;
+        width: 170px;
+        margin-top: 20px;
+    }
+    .topic-heading-cls h3 {
+        background: whitesmoke;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+    .teachers-contact-right-side-col-cls a{
+        float: right;
+    }
+</style>
+
+<br/>
+
+<a class="btn btn-info glyphicon glyphicon-print" onclick="printFunction()"></a>
+
+<section>
+    <div class="row">
+        <div class="col-md-4" id="top-left-col-id">
+            <h2>
+                <b>
+                    @Html.DisplayFor(model => model.YourName)
+                </b>
+            </h2>
+            <h4>
+                @Html.DisplayFor(model => model.Department.DeptName)
+            </h4>
+            <h4>
+                @Html.DisplayFor(model => model.UniversityName)
+            </h4>
+            <a>
+                E-mail : @Html.DisplayFor(model => model.YourEmail)
+            </a>
+            <br/>
+            <a>
+                Phone : @Html.DisplayFor(model => model.YourPhone)
+            </a>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4" id="profile-col-id">
+            <img src="data:image;base64, @Convert.ToBase64String(Model.ProfileImage)"/>
+        </div>
+    </div>
+    
+    <hr/>
+    
+    <div class="container">
+        <div class="row" id="career-objective-row-id">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Career Objective</b>
+                </h3>
+                <br/>
+                <p>
+                    @Html.DisplayFor(model => model.CareerObjective)
+                </p>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Academic Qualification</b>
+                </h3>
+                <br/>
+                <p>
+                    @Html.DisplayFor(model => model.AcademicQualification)
+                </p>
+            </div>
+        </div>     
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Technical Skills</b>
+                </h3>
+                <br/>
+                <p>
+                    <b>@Html.DisplayFor(model => model.TechnicalSkillTitleOne) :</b> &nbsp; &nbsp; @Html.DisplayFor(model => model.TechnicalSkillContentOne)
+                </p>
+                <p>
+                    <b>@Html.DisplayFor(model => model.TechnicalSkillTitleTwo) :</b> &nbsp; &nbsp; @Html.DisplayFor(model => model.TechnicalSkillContentTwo)
+                </p>
+                <p>
+                    <b> @Html.DisplayFor(model => model.TechnicalSkillTitleThree) :</b> &nbsp; &nbsp;  @Html.DisplayFor(model => model.TechnicalSkillContentThree)
+                </p>
+                <p>
+                    <b>@Html.DisplayFor(model => model.TechnicalSkillTitleFour) :</b> &nbsp; &nbsp;  @Html.DisplayFor(model => model.TechnicalSkillContentFour)
+                </p>
+                <p>
+                    <b>@Html.DisplayFor(model => model.TechnicalSkillTitleFive) :</b> &nbsp; &nbsp;  @Html.DisplayFor(model => model.TechnicalSkillContentFive)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Project And Work Done</b>
+                </h3>
+                <br/>
+                <p>
+                    <b>@Html.DisplayFor(model => model.ProjectNameOne) </b> --------------------------------------------------------------------------------------------------------- @Html.DisplayFor(model => model.ProjectContentOne)
+                </p>
+                <p>
+                    <b>@Html.DisplayFor(model => model.ProjectNameTwo) </b> --------------------------------------------------------------------------------------------------- @Html.DisplayFor(model => model.ProjectContentTwo)
+                </p>
+                <p>
+                    <b>@Html.DisplayFor(model => model.ProjectNameThree) </b> ------------------------------------------------------------------------------------------------------------- @Html.DisplayFor(model => model.ProjectContentThree)
+                </p>
+                <p>
+                    <b>@Html.DisplayFor(model => model.ProjectNameFour) </b> -------------------------------------------------------- @Html.DisplayFor(model => model.ProjectContentFour)
+                </p>
+                <p>
+                    <b>@Html.DisplayFor(model => model.ProjectNameFive) </b> --------------------------------------------------- @Html.DisplayFor(model => model.ProjectContentFive)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Extra Curricular Activities</b>
+                </h3>
+                <br/>
+                <ul>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.ExtraCurricularOne)
+                        </b>
+                    </li>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.ExtraCurricularTwo)
+                        </b>
+                    </li>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.ExtraCurricularThree)
+                        </b>
+                    </li>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.ExtraCurricularFour)
+                        </b>
+                    </li>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.ExtraCurricularFive)
+                        </b>
+                    </li>
+                </ul>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Field of Interest</b>
+                </h3>
+                <br/>
+                <p>
+                    @Html.DisplayFor(model => model.FieldOfInterest)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Language Proficiency</b>
+                </h3>
+                <br/>
+                <ul>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.Language.LanguageName)
+                        </b>
+                    </li>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.LanguageTwo)
+                        </b>
+                    </li>
+                    <li>
+                        <b>
+                            @Html.DisplayFor(model => model.LanguageThree)
+                        </b>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>Personal Information</b>
+                </h3>
+                <br/>
+                <p>
+                    <b>Father's Name : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.FatherName)
+                </p>
+                <p>
+                    <b>Mother's Name : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.MotherName)
+                </p>
+                <p>
+                    <b>Birthday : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.DateOfBirth.Date)
+                </p>
+                <p>
+                    <b>Gender : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.GenderModel.GenderName)
+                </p>
+                <p>
+                    <b>Marital Status : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.MaritalStatus.MaritalStatusName)
+                </p>
+                <p>
+                    <b>Nationality : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.Nationality)
+                </p>
+                <p>
+                    <b>National ID No. : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.NIDNumber)
+                </p>
+                <p>
+                    <b>Religion : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.Religion.ReligionName)
+                </p>
+                <p>
+                    <b>Parmanent Address : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.PermanentAddress)
+                </p>
+                <p>
+                    <b>Current Address : </b> &nbsp; &nbsp; @Html.DisplayFor(model => model.CurrentAddress)
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="topic-heading-cls">
+                <h3>
+                    <b>References</b>
+                </h3>
+                <br />
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>
+                            @Html.DisplayFor(model => model.TeacherNameOne)
+                        </h4>
+                        <p>
+                            @Html.DisplayFor(model => model.PositionOne)
+                        </p>
+                    </div>
+                    <div class="col-md-4 teachers-contact-right-side-col-cls">
+                        <a>
+                            @Html.DisplayFor(model => model.EmailOne)
+                        </a>
+                        <br />
+                        <a>
+                            @Html.DisplayFor(model => model.PhoneOne)
+                        </a>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>
+                            @Html.DisplayFor(model => model.TeacherNameTwo)
+                        </h4>
+                        <p>
+                            @Html.DisplayFor(model => model.PositionTwo)
+                        </p>
+                    </div>
+                    <div class="col-md-4 teachers-contact-right-side-col-cls">
+                        <a>
+                            @Html.DisplayFor(model => model.EmailTwo)
+                        </a>
+                        <br />
+                        <a>
+                            @Html.DisplayFor(model => model.PhoneTwo)
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CvId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{ 
+    
+    <script>
+        $(document).ready(function(){
+
+        });
+
+        function printFunction() {
+
+            window.print();
+
+        }
+
+    </script>
+}

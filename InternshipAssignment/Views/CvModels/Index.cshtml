@@ -1,0 +1,382 @@
+﻿@model IEnumerable<InternshipAssignment.Models.CvModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    marquee {
+        height: 80px;
+        background: whitesmoke;
+        margin-bottom: 30px;
+    }
+
+    table {
+        margin-top: 50px;
+    }
+
+    thead {
+        background: gold;
+    }
+</style>
+
+<marquee>
+
+    <h2>Welcome To Resume Latter Index Page</h2>
+</marquee>
+
+<a asp-action="Create" class="btn btn-success">Create New Resume Latter</a>
+<a asp-action="Details" asp-route-id="1" class="btn btn-primary glyphicon glyphicon-print"></a>
+
+
+<table class="table table-bordered table-responsive table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.YourName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UniversityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YourEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YourPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfileImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CareerObjective)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcademicQualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillTitleOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillContentOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillTitleTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillContentTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillTitleThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillContentThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillTitleFour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillContentFour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillTitleFive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnicalSkillContentFive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectNameOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContentOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectNameTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContentTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectNameThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContentThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectNameFour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContentFour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectNameFive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectContentFive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtraCurricularOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtraCurricularTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtraCurricularThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtraCurricularFour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtraCurricularFive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FieldOfInterest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LanguageTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LanguageThree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NIDNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermanentAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeacherNameOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeacherNameTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GenderModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaritalStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Religion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YourName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UniversityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YourEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YourPhone)
+                </td>
+                <td>
+                    <img src="data:image;base64, @Convert.ToBase64String(@item.ProfileImage)" width="80px" height="80px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CareerObjective)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AcademicQualification)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillTitleOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillContentOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillTitleTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillContentTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillTitleThree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillContentThree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillTitleFour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillContentFour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillTitleFive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TechnicalSkillContentFive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectNameOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectContentOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectNameTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectContentTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectNameThree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectContentThree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectNameFour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectContentFour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectNameFive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectContentFive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExtraCurricularOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExtraCurricularTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExtraCurricularThree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExtraCurricularFour)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExtraCurricularFive)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FieldOfInterest)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LanguageTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LanguageThree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FatherName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotherName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NIDNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PermanentAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeacherNameOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeacherNameTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneTwo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department.DeptName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GenderModel.GenderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Language.LanguageName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaritalStatus.MaritalStatusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Religion.ReligionName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CvId" class="btn btn-success glyphicon glyphicon-edit"></a>
+                    <a asp-action="Details" asp-route-id="@item.CvId" class="btn btn-info glyphicon glyphicon-eye-open"></a>
+                    <a asp-action="Details" asp-route-id="@item.CvId" class="btn btn-primary glyphicon glyphicon-print"></a>
+                    <a asp-action="Delete" asp-route-id="@item.CvId" class="btn btn-danger glyphicon glyphicon-trash"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
